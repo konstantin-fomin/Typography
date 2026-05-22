@@ -686,10 +686,14 @@ nav.scrolled {
 .prod-img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 56px;
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.prod-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .prod-info {
@@ -1510,86 +1514,171 @@ footer {
     <div class="products-scroll">
       <div class="products-row">
 
-        <!-- Product 1 -->
-        <div class="prod-card reveal" data-id="poster-ne-boysya">
-          <div class="prod-img" style="background: linear-gradient(135deg, #E4DCC8, #C8B898);">🖼</div>
+        <div class="prod-card reveal" data-id="ps138-warm">
+          <div class="prod-img"><img src="img/products/ps138-warm.jpg" alt="Открытка Пс. 138:1" loading="lazy"></div>
           <div class="prod-info">
-            <span class="prod-tag">Постер</span>
-            <div class="prod-name">«Не бойся» А3</div>
-            <p class="prod-desc">Плакат с Иисус Навин 1:9. Акварельная ботаника, тёплые тона.</p>
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Ты испытал меня» Пс. 138:1</div>
+            <p class="prod-desc">Акварельная открытка с сердцем и лентой. Тёплые тона, ручная леттеринг.</p>
             <div class="prod-footer">
-              <span class="prod-price">490 ₽</span>
-              <button class="btn-add" data-id="poster-ne-boysya" data-name="«Не бойся» А3" data-price="490" data-tag="Постер">В корзину</button>
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="ps138-warm" data-name="Открытка «Пс. 138:1»" data-price="250" data-tag="Открытка">В корзину</button>
             </div>
           </div>
         </div>
 
-        <!-- Product 2 -->
-        <div class="prod-card reveal" data-id="journal-utro">
-          <div class="prod-img" style="background: linear-gradient(135deg, #D0DCCC, #B0C4A8);">📔</div>
+        <div class="prod-card reveal" data-id="ps138-sticker">
+          <div class="prod-img"><img src="img/products/ps138-sticker.jpg" alt="Стикер Пс. 138:1" loading="lazy"></div>
           <div class="prod-info">
-            <span class="prod-tag">Журнал</span>
-            <div class="prod-name">Prayer Journal «Утро»</div>
-            <p class="prod-desc">Блокнот для молитв и размышлений. Акварельная обложка, 120 листов.</p>
-            <div class="prod-footer">
-              <span class="prod-price">620 ₽</span>
-              <button class="btn-add" data-id="journal-utro" data-name="Prayer Journal «Утро»" data-price="620" data-tag="Журнал">В корзину</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 3 -->
-        <div class="prod-card reveal" data-id="raskraska-pastyr">
-          <div class="prod-img" style="background: linear-gradient(135deg, #E0CCC8, #C8A8A0);">🎨</div>
-          <div class="prod-info">
-            <span class="prod-tag">Детям</span>
-            <div class="prod-name">«Добрый пастырь»</div>
-            <p class="prod-desc">Раскраска для детей 4–8 лет с историями из Библии и заданиями.</p>
-            <div class="prod-footer">
-              <span class="prod-price">380 ₽</span>
-              <button class="btn-add" data-id="raskraska-pastyr" data-name="«Добрый пастырь»" data-price="380" data-tag="Детям">В корзину</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 4 -->
-        <div class="prod-card reveal" data-id="kartochki-obetovaniya">
-          <div class="prod-img" style="background: linear-gradient(135deg, #E8E0D0, #D4C8B0);">🃏</div>
-          <div class="prod-info">
-            <span class="prod-tag">Карточки</span>
-            <div class="prod-name">«Обетования» 30 шт</div>
-            <p class="prod-desc">Набор карточек с обетованиями из Писания. Плотная бумага, красивый дизайн.</p>
-            <div class="prod-footer">
-              <span class="prod-price">350 ₽</span>
-              <button class="btn-add" data-id="kartochki-obetovaniya" data-name="«Обетования» 30 шт" data-price="350" data-tag="Карточки">В корзину</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product 5 -->
-        <div class="prod-card reveal" data-id="nakleyki-vera">
-          <div class="prod-img" style="background: linear-gradient(135deg, #E8D4C8, #D4A898);">✨</div>
-          <div class="prod-info">
-            <span class="prod-tag">Наклейки</span>
-            <div class="prod-name">Наклейки «Вера»</div>
-            <p class="prod-desc">Набор виниловых наклеек с библейскими мотивами. Подходят для ежедневников.</p>
+            <span class="prod-tag">Наклейка</span>
+            <div class="prod-name">Стикер «Пс. 138:1»</div>
+            <p class="prod-desc">Виниловая наклейка с вырубкой. Цветочный акварельный дизайн.</p>
             <div class="prod-footer">
               <span class="prod-price">180 ₽</span>
-              <button class="btn-add" data-id="nakleyki-vera" data-name="Наклейки «Вера»" data-price="180" data-tag="Наклейки">В корзину</button>
+              <button class="btn-add" data-id="ps138-sticker" data-name="Стикер «Пс. 138:1»" data-price="180" data-tag="Наклейка">В корзину</button>
             </div>
           </div>
         </div>
 
-        <!-- Product 6 -->
-        <div class="prod-card reveal" data-id="paskhalny-nabor">
-          <div class="prod-img" style="background: linear-gradient(135deg, #E0DCC8, #C8B898);">🐣</div>
+        <div class="prod-card reveal" data-id="ps106-sea">
+          <div class="prod-img"><img src="img/products/ps106-sea.jpg" alt="Открытка Пс. 106:29" loading="lazy"></div>
           <div class="prod-info">
-            <span class="prod-tag">Праздники</span>
-            <div class="prod-name">Пасхальный набор</div>
-            <p class="prod-desc">Раскраска + наклейки + открытка для детей. Подарочная упаковка.</p>
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Бурю в тишину» Пс. 106:29</div>
+            <p class="prod-desc">Пейзаж с морем и ромашками. Спокойные пастельные цвета.</p>
             <div class="prod-footer">
-              <span class="prod-price">550 ₽</span>
-              <button class="btn-add" data-id="paskhalny-nabor" data-name="Пасхальный набор" data-price="550" data-tag="Праздники">В корзину</button>
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="ps106-sea" data-name="Открытка «Пс. 106:29»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="ps22-sheep">
+          <div class="prod-img"><img src="img/products/ps22-sheep.jpg" alt="Открытка Пс. 22:1" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Господь — Пастырь мой» Пс. 22:1</div>
+            <p class="prod-desc">Милая овечка на холме. Нежные пастельные тона.</p>
+            <div class="prod-footer">
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="ps22-sheep" data-name="Открытка «Пс. 22:1»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="sheep-follow">
+          <div class="prod-img"><img src="img/products/sheep-follow.jpg" alt="Открытка «Овечка»" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Детям</span>
+            <div class="prod-name">«Я маленькая овечка»</div>
+            <p class="prod-desc">Детская открытка с овечкой и ромашками. Для самых маленьких.</p>
+            <div class="prod-footer">
+              <span class="prod-price">220 ₽</span>
+              <button class="btn-add" data-id="sheep-follow" data-name="Открытка «Овечка»" data-price="220" data-tag="Детям">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="new-heart">
+          <div class="prod-img"><img src="img/products/new-heart.jpg" alt="Открытка «Сердце новое»" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Я дам вам сердце новое»</div>
+            <p class="prod-desc">Яркая леттеринг-открытка с сердцем и цветами.</p>
+            <div class="prod-footer">
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="new-heart" data-name="Открытка «Сердце новое»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="prov14-house">
+          <div class="prod-img"><img src="img/products/prov14-house.jpg" alt="Открытка Притчи 14:11" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Жилище праведных» Притчи 14:11</div>
+            <p class="prod-desc">Уютный домик с цветами. Тёплая cottagecore иллюстрация.</p>
+            <div class="prod-footer">
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="prov14-house" data-name="Открытка «Притчи 14:11»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="isaiah41-flowers">
+          <div class="prod-img"><img src="img/products/isaiah41-flowers.jpg" alt="Открытка Исаия 41:10" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Не бойся» Исаия 41:10</div>
+            <p class="prod-desc">Нежные полевые цветы и ботаника. Каллиграфия от руки.</p>
+            <div class="prod-footer">
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="isaiah41-flowers" data-name="Открытка «Исаия 41:10»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="rom10-kurios">
+          <div class="prod-img"><img src="img/products/rom10-kurios.jpg" alt="Открытка Рим. 10:13" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Открытка</span>
+            <div class="prod-name">«Господь Куриос» Рим. 10:13</div>
+            <p class="prod-desc">Акварельная цветочная композиция с ромашками и полевыми цветами.</p>
+            <div class="prod-footer">
+              <span class="prod-price">250 ₽</span>
+              <button class="btn-add" data-id="rom10-kurios" data-name="Открытка «Рим. 10:13»" data-price="250" data-tag="Открытка">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="ps51-lighthouse">
+          <div class="prod-img"><img src="img/products/ps51-lighthouse.jpg" alt="Постер Псалом 51:10" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Постер</span>
+            <div class="prod-name">«Маяк» Псалом 51:10</div>
+            <p class="prod-desc">Арт-постер с маяком и рукописным текстом. Формат А4.</p>
+            <div class="prod-footer">
+              <span class="prod-price">490 ₽</span>
+              <button class="btn-add" data-id="ps51-lighthouse" data-name="Постер «Маяк»" data-price="490" data-tag="Постер">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="1cor13-love">
+          <div class="prod-img"><img src="img/products/1cor13-love.jpg" alt="Постер 1 Кор. 13" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Постер</span>
+            <div class="prod-name">«Любовь долготерпит» 1 Кор. 13</div>
+            <p class="prod-desc">Типографический постер с полным текстом гимна любви. А3.</p>
+            <div class="prod-footer">
+              <span class="prod-price">490 ₽</span>
+              <button class="btn-add" data-id="1cor13-love" data-name="Постер «1 Кор. 13»" data-price="490" data-tag="Постер">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="matt5-flower">
+          <div class="prod-img"><img src="img/products/matt5-flower.jpg" alt="Постер Матфея 5:8" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Постер</span>
+            <div class="prod-name">«Блаженны чистые сердцем» Мф. 5:8</div>
+            <p class="prod-desc">Акварельный цветок на текстурной бумаге. Формат А4.</p>
+            <div class="prod-footer">
+              <span class="prod-price">390 ₽</span>
+              <button class="btn-add" data-id="matt5-flower" data-name="Постер «Мф. 5:8»" data-price="390" data-tag="Постер">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="prod-card reveal" data-id="luke18-pray">
+          <div class="prod-img"><img src="img/products/luke18-pray.jpg" alt="Постер Луки 18:1" loading="lazy"></div>
+          <div class="prod-info">
+            <span class="prod-tag">Постер</span>
+            <div class="prod-name">«Молиться и не унывать» Луки 18:1</div>
+            <p class="prod-desc">Нежное сердце в поле розовых цветов. Формат А4.</p>
+            <div class="prod-footer">
+              <span class="prod-price">350 ₽</span>
+              <button class="btn-add" data-id="luke18-pray" data-name="Постер «Луки 18:1»" data-price="350" data-tag="Постер">В корзину</button>
             </div>
           </div>
         </div>
@@ -1799,7 +1888,7 @@ function getCartCount() {
 }
 
 function getEmoji(tag) {
-  const map = { 'Постер': '🖼', 'Журнал': '📔', 'Детям': '🎨', 'Карточки': '🃏', 'Наклейки': '✨', 'Праздники': '🐣' };
+  const map = { 'Постер': '🖼', 'Открытка': '💌', 'Наклейка': '✨', 'Детям': '🎨', 'Журнал': '📔', 'Карточки': '🃏', 'Праздники': '🐣' };
   return map[tag] || '📦';
 }
 
