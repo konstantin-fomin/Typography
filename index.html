@@ -1028,6 +1028,84 @@ footer {
   color: rgba(247, 242, 232, 0.4);
 }
 
+/* ── CART PANEL ── */
+.cart-overlay {
+  position: fixed; inset: 0; background: rgba(44,32,24,0.4); z-index: 400;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s;
+}
+.cart-overlay.open { opacity: 1; pointer-events: auto; }
+
+.cart-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; width: 100%; max-width: 420px;
+  background: var(--cream); z-index: 401; display: flex; flex-direction: column;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: -8px 0 30px rgba(0,0,0,0.15);
+}
+.cart-panel.open { transform: translateX(0); }
+
+.cart-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px; border-bottom: 1px solid var(--parchment);
+}
+.cart-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--ink); }
+.cart-close { background: none; border: none; font-size: 24px; color: var(--ink-soft); cursor: pointer; }
+.cart-back { background: none; border: none; font-size: 14px; color: var(--ink-soft); cursor: pointer; font-family: 'Nunito', sans-serif; }
+
+.cart-items { flex: 1; overflow-y: auto; padding: 0 24px; }
+
+.cart-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--parchment); }
+.cart-item-img { width: 64px; height: 64px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+.cart-item-info { flex: 1; }
+.cart-item-name { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--ink); margin-bottom: 2px; }
+.cart-item-tag { font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; }
+.cart-item-row { display: flex; justify-content: space-between; align-items: center; }
+
+.cart-qty { display: flex; align-items: center; gap: 10px; }
+.cart-qty-btn { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--parchment); background: none; font-size: 14px; color: var(--ink-soft); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.3s; }
+.cart-qty-btn:hover { border-color: var(--terra); color: var(--terra); }
+.cart-qty-num { font-size: 14px; color: var(--ink); min-width: 16px; text-align: center; }
+.cart-item-price { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--terra); }
+
+.cart-empty { text-align: center; padding: 60px 20px; color: var(--ink-soft); font-size: 14px; }
+
+.cart-footer { padding: 20px 24px; border-top: 1px solid var(--parchment); background: var(--cream-dark); }
+.cart-total-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.cart-total-label { font-size: 14px; color: var(--ink-soft); }
+.cart-total-price { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--ink); }
+.cart-checkout-btn { width: 100%; background: var(--ink); color: var(--cream); border: none; padding: 14px; border-radius: 40px; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-family: 'Nunito', sans-serif; transition: background 0.3s; }
+.cart-checkout-btn:hover { background: var(--terra); }
+
+/* Sticky cart mobile */
+.sticky-cart {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 150;
+  background: var(--ink); color: var(--cream); padding: 13px 28px; border-radius: 50px;
+  font-size: 13px; letter-spacing: 0.06em; display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 8px 30px rgba(44,32,24,0.25); cursor: pointer; border: none;
+  font-family: 'Nunito', sans-serif; opacity: 0;
+  transition: opacity 0.3s, transform 0.3s, background 0.3s;
+  transform: translateX(-50%) translateY(80px);
+}
+.sticky-cart.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+.sticky-cart:hover { background: var(--terra); }
+
+/* ── ORDER FORM ── */
+.order-form { padding: 24px; }
+.order-field { margin-bottom: 16px; }
+.order-label { font-size: 12px; color: var(--ink-soft); margin-bottom: 6px; display: block; }
+.order-input { width: 100%; padding: 12px 16px; border: 1px solid var(--parchment); border-radius: 12px; font-size: 14px; background: white; color: var(--ink); outline: none; font-family: 'Nunito', sans-serif; box-sizing: border-box; }
+.order-input:focus { border-color: var(--terra); }
+.order-textarea { width: 100%; padding: 12px 16px; border: 1px solid var(--parchment); border-radius: 12px; font-size: 14px; background: white; color: var(--ink); outline: none; font-family: 'Nunito', sans-serif; resize: none; height: 70px; box-sizing: border-box; }
+.order-textarea:focus { border-color: var(--terra); }
+.order-summary { background: var(--cream-dark); border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; }
+.order-summary-title { font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; }
+.order-summary-items { font-size: 13px; color: var(--ink); line-height: 1.8; }
+.order-summary-total { border-top: 1px solid var(--parchment); margin-top: 8px; padding-top: 8px; display: flex; justify-content: space-between; }
+.order-summary-total-label { font-size: 14px; color: var(--ink); font-weight: 500; }
+.order-summary-total-price { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--terra); }
+.order-submit-btn { width: 100%; background: var(--deep-sage); color: var(--cream); border: none; padding: 14px; border-radius: 40px; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; font-family: 'Nunito', sans-serif; transition: background 0.3s; }
+.order-submit-btn:hover { background: var(--terra); }
+.order-note { text-align: center; margin-top: 12px; font-size: 11px; color: var(--sage); }
+
 /* ══════════════════════════════════════
    DESKTOP OVERRIDES @media (min-width: 768px)
 ══════════════════════════════════════ */
@@ -1211,6 +1289,8 @@ footer {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  .sticky-cart { display: none; }
 }
 </style>
 </head>
@@ -1623,21 +1703,36 @@ footer {
   </div>
 </footer>
 
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header" id="cartHeader">
+    <span class="cart-title">Корзина</span>
+    <button class="cart-close" id="cartClose">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row">
+      <span class="cart-total-label">Итого:</span>
+      <span class="cart-total-price" id="cartTotal">0 ₽</span>
+    </div>
+    <button class="cart-checkout-btn" id="cartCheckoutBtn">Оформить заказ</button>
+  </div>
+</div>
+<button class="sticky-cart" id="stickyCart">🛒 Корзина · <span id="stickyCount">0</span></button>
+
 <script>
-// ── Nav scroll ──
+// ═══════════════════════════════════════
+// NAV
+// ═══════════════════════════════════════
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-}, { passive: true });
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
 
-// ── Mobile menu ──
-const mobileMenu = document.getElementById('mobileMenu');
 const menuToggle = document.getElementById('menuToggle');
 const menuClose = document.getElementById('menuClose');
+const mobileMenu = document.getElementById('mobileMenu');
 
 menuToggle.addEventListener('click', () => {
   mobileMenu.classList.add('open');
@@ -1651,16 +1746,12 @@ function closeMobileMenu() {
 
 menuClose.addEventListener('click', closeMobileMenu);
 
-// ── Scroll reveal ──
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08 });
-
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+reveals.forEach(el => observer.observe(el));
 
 // ── Newsletter submit ──
 function handleNewsletterSubmit(e) {
@@ -1676,31 +1767,214 @@ function handleNewsletterSubmit(e) {
   }, 3000);
 }
 
-// ── Add to cart ──
-let cart = [];
+// ═══════════════════════════════════════
+// CART
+// ═══════════════════════════════════════
+const CART_KEY = 'svetly-cart';
 
+function getCart() {
+  try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
+  catch { return []; }
+}
+
+function saveCart(cart) {
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  updateCartUI();
+}
+
+function addToCart(id, name, price, tag) {
+  const cart = getCart();
+  const existing = cart.find(item => item.id === id);
+  if (existing) { existing.qty++; }
+  else { cart.push({ id, name, price: Number(price), qty: 1, tag }); }
+  saveCart(cart);
+}
+
+function changeQty(id, delta) {
+  const cart = getCart();
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) cart.splice(cart.indexOf(item), 1);
+  saveCart(cart);
+  showCartView();
+}
+
+function getCartTotal() {
+  return getCart().reduce((sum, item) => sum + item.price * item.qty, 0);
+}
+
+function getCartCount() {
+  return getCart().reduce((sum, item) => sum + item.qty, 0);
+}
+
+function getEmoji(tag) {
+  const map = { 'Постер': '🖼', 'Журнал': '📔', 'Детям': '🎨', 'Карточки': '🃏', 'Наклейки': '✨', 'Праздники': '🐣' };
+  return map[tag] || '📦';
+}
+
+const cartOverlay = document.getElementById('cartOverlay');
+const cartPanel = document.getElementById('cartPanel');
+const cartItems = document.getElementById('cartItems');
+const cartFooter = document.getElementById('cartFooter');
+const cartTotal = document.getElementById('cartTotal');
+const cartClose = document.getElementById('cartClose');
+const cartCheckoutBtn = document.getElementById('cartCheckoutBtn');
+const navCartCount = document.getElementById('navCartCount');
+const stickyCart = document.getElementById('stickyCart');
+const stickyCount = document.getElementById('stickyCount');
+const navCartBtn = document.getElementById('navCartBtn');
+const cartHeader = document.getElementById('cartHeader');
+
+function openCart() {
+  showCartView();
+  cartOverlay.classList.add('open');
+  cartPanel.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCart() {
+  cartOverlay.classList.remove('open');
+  cartPanel.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function updateCartUI() {
+  const count = getCartCount();
+  navCartCount.textContent = count;
+  stickyCount.textContent = count;
+  if (count > 0) stickyCart.classList.add('visible');
+  else stickyCart.classList.remove('visible');
+}
+
+function showCartView() {
+  const cart = getCart();
+  cartHeader.innerHTML = '<span class="cart-title">Корзина</span><button class="cart-close" onclick="closeCart()">×</button>';
+
+  if (cart.length === 0) {
+    cartItems.innerHTML = '<div class="cart-empty">Корзина пуста</div>';
+    cartFooter.style.display = 'none';
+    return;
+  }
+
+  cartItems.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <div class="cart-item-img" style="background:var(--cream-dark);">${getEmoji(item.tag)}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-tag">${item.tag}</div>
+        <div class="cart-item-row">
+          <div class="cart-qty">
+            <button class="cart-qty-btn" onclick="changeQty('${item.id}',-1)">−</button>
+            <span class="cart-qty-num">${item.qty}</span>
+            <button class="cart-qty-btn" onclick="changeQty('${item.id}',1)">+</button>
+          </div>
+          <div class="cart-item-price">${(item.price * item.qty).toLocaleString('ru-RU')} ₽</div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  cartFooter.style.display = 'block';
+  cartTotal.textContent = getCartTotal().toLocaleString('ru-RU') + ' ₽';
+}
+
+// Add to cart buttons
 document.querySelectorAll('.btn-add').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.dataset.id;
-    const name = btn.dataset.name;
-    const price = parseInt(btn.dataset.price);
-    const tag = btn.dataset.tag;
-    const existing = cart.find(item => item.id === id);
-    if (existing) {
-      existing.qty += 1;
-    } else {
-      cart.push({ id, name, price, tag, qty: 1 });
-    }
-    const count = cart.reduce((sum, item) => sum + item.qty, 0);
-    document.getElementById('navCartCount').textContent = count;
-    btn.textContent = 'Добавлено ✓';
-    btn.style.background = 'var(--sage-dark)';
-    setTimeout(() => {
-      btn.textContent = 'В корзину';
-      btn.style.background = '';
-    }, 1500);
+  btn.addEventListener('click', function() {
+    const { id, name, price, tag } = this.dataset;
+    addToCart(id, name, price, tag);
+    const orig = this.textContent;
+    this.textContent = '✓ Добавлено';
+    this.style.background = 'var(--sage)';
+    setTimeout(() => { this.textContent = orig; this.style.background = ''; }, 1800);
   });
 });
+
+navCartBtn.addEventListener('click', openCart);
+stickyCart.addEventListener('click', openCart);
+cartOverlay.addEventListener('click', closeCart);
+cartCheckoutBtn.addEventListener('click', showOrderForm);
+
+updateCartUI();
+
+// ═══════════════════════════════════════
+// ORDER FORM (Task 9)
+// ═══════════════════════════════════════
+function showOrderForm() {
+  const cart = getCart();
+  if (cart.length === 0) return;
+
+  cartHeader.innerHTML = '<button class="cart-back" onclick="showCartView()">← Назад</button><span class="cart-title">Оформление</span><button class="cart-close" onclick="closeCart()">×</button>';
+
+  const itemsHtml = cart.map(item =>
+    `${item.name} × ${item.qty} — ${(item.price * item.qty).toLocaleString('ru-RU')} ₽`
+  ).join('<br>');
+
+  cartItems.innerHTML = `
+    <div class="order-form">
+      <div class="order-field">
+        <label class="order-label">Ваше имя</label>
+        <input class="order-input" id="orderName" placeholder="Анна">
+      </div>
+      <div class="order-field">
+        <label class="order-label">Телефон или email</label>
+        <input class="order-input" id="orderContact" placeholder="+7 900 123-45-67">
+      </div>
+      <div class="order-field">
+        <label class="order-label">Город</label>
+        <input class="order-input" id="orderCity" placeholder="Краснодар">
+      </div>
+      <div class="order-field">
+        <label class="order-label">Комментарий</label>
+        <textarea class="order-textarea" id="orderComment" placeholder="Пожелания к заказу..."></textarea>
+      </div>
+      <div class="order-summary">
+        <div class="order-summary-title">Ваш заказ:</div>
+        <div class="order-summary-items">${itemsHtml}</div>
+        <div class="order-summary-total">
+          <span class="order-summary-total-label">Итого</span>
+          <span class="order-summary-total-price">${getCartTotal().toLocaleString('ru-RU')} ₽</span>
+        </div>
+      </div>
+      <button class="order-submit-btn" onclick="submitOrder()">Отправить заказ</button>
+      <p class="order-note">Мы свяжемся с вами для подтверждения</p>
+    </div>
+  `;
+
+  cartFooter.style.display = 'none';
+}
+
+function submitOrder() {
+  const name = document.getElementById('orderName').value || 'Не указано';
+  const contact = document.getElementById('orderContact').value || 'Не указан';
+  const city = document.getElementById('orderCity').value || 'Не указан';
+  const comment = document.getElementById('orderComment').value;
+  const cart = getCart();
+
+  let text = '🛒 Новый заказ с svetly.shop\n\n';
+  text += '👤 ' + name + '\n📱 ' + contact + '\n🏙 ' + city + '\n';
+  if (comment) text += '💬 ' + comment + '\n';
+  text += '\n📦 Товары:\n';
+  cart.forEach(item => {
+    text += '• ' + item.name + ' × ' + item.qty + ' = ' + (item.price * item.qty).toLocaleString('ru-RU') + ' ₽\n';
+  });
+  text += '\n💰 Итого: ' + getCartTotal().toLocaleString('ru-RU') + ' ₽';
+
+  const tgUrl = 'https://t.me/share/url?url=' + encodeURIComponent('svetly.shop') + '&text=' + encodeURIComponent(text);
+  window.open(tgUrl, '_blank');
+
+  localStorage.removeItem(CART_KEY);
+  updateCartUI();
+  closeCart();
+}
+
+// Hero card stagger on mobile
+if (window.innerWidth < 768) {
+  document.querySelectorAll('.hero-card').forEach((card, i) => {
+    card.style.animation = 'fadeUp 0.6s ' + (0.3 + i * 0.1) + 's ease both';
+  });
+}
 </script>
 </body>
 </html>
