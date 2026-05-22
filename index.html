@@ -257,7 +257,7 @@ nav.scrolled {
 
 .hero {
   min-height: 100svh;
-  padding: 90px 20px 40px;
+  padding: 80px 20px 40px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -637,20 +637,6 @@ nav.scrolled {
   opacity: 0.4;
 }
 
-.cat-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-  transition: opacity 0.3s ease, transform 0.4s ease;
-}
-
-.cat-card:hover .cat-bg-img {
-  opacity: 0.5;
-  transform: scale(1.04);
-}
 
 .cat-info {
   position: relative;
@@ -1203,8 +1189,9 @@ footer {
   }
 
   .hero-title {
-    font-size: 64px;
-    line-height: 1.1;
+    font-size: 68px;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
   }
 
   .scroll-hint {
@@ -1263,6 +1250,14 @@ footer {
   }
 
   .prod-card--wide .prod-img {
+    aspect-ratio: 2 / 1;
+  }
+
+  .prod-card--wide-last {
+    grid-column: span 2;
+  }
+
+  .prod-card--wide-last .prod-img {
     aspect-ratio: 2 / 1;
   }
 
@@ -1446,7 +1441,7 @@ footer {
   <div class="trust-pill">📦 Доставка по России</div>
   <div class="trust-pill">✦ Малый живой тираж</div>
   <div class="trust-pill">💛 Для семьи и детей</div>
-  <div class="trust-pill">⭐ Более 200 довольных семей</div>
+  <div class="trust-pill">🎁 Любимый подарок для семьи</div>
 </div>
 
 <!-- ══ TASK 4: VERSE BAND ══ -->
@@ -1468,7 +1463,6 @@ footer {
       <!-- Category 1 -->
       <div class="cat-card reveal">
         <div class="cat-bg" style="background: linear-gradient(160deg, #E0D8CC, #C4B498);">
-          <img class="cat-bg-img" src="img/products/ps51-lighthouse.jpg" alt="" aria-hidden="true">
           <span class="cat-icon">🖼</span>
           <div class="cat-info">
             <div class="cat-name">Постеры</div>
@@ -1502,7 +1496,6 @@ footer {
       <!-- Category 4 -->
       <div class="cat-card reveal">
         <div class="cat-bg" style="background: linear-gradient(160deg, #E8D8CC, #D4B8A0);">
-          <img class="cat-bg-img" src="img/products/ps138-warm.jpg" alt="" aria-hidden="true">
           <span class="cat-icon">✨</span>
           <div class="cat-info">
             <div class="cat-name">Наклейки</div>
@@ -1612,7 +1605,7 @@ footer {
           </div>
         </div>
 
-        <div class="prod-card reveal" data-id="1cor13-love">
+        <div class="prod-card prod-card--wide-last reveal" data-id="1cor13-love">
           <div class="prod-img"><img src="img/products/1cor13-love.jpg" alt="Постер 1 Кор. 13" loading="lazy"></div>
           <div class="prod-info">
             <span class="prod-tag">Постер</span>
