@@ -1133,7 +1133,6 @@ footer {
     grid-template-columns: 1fr 1fr;
     min-height: 100vh;
     padding: 0;
-    background: linear-gradient(to right, var(--cream) 50%, var(--cream-dark) 50%);
   }
 
   .hero-left {
@@ -1147,19 +1146,21 @@ footer {
 
   .hero-cards-wrap {
     padding: 80px 40px 80px 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: visible;
-    height: 100%;
-    align-content: center;
     margin: 0;
     background: var(--cream-dark);
-    max-width: 600px;
+    border-bottom-left-radius: 48px;
   }
 
   .hero-cards {
-    display: contents;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 520px;
+    width: 100%;
   }
 
   .hero-card {
