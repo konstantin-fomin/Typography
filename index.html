@@ -467,6 +467,568 @@ nav.scrolled {
 }
 
 /* ══════════════════════════════════════
+   TASK 4: TRUST PILLS + VERSE BAND
+══════════════════════════════════════ */
+
+/* Trust pills */
+.trust-pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 20px;
+  border-top: 1px solid var(--parchment);
+  border-bottom: 1px solid var(--parchment);
+  background: var(--cream-dark);
+}
+
+.trust-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.trust-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--cream);
+  border: 1px solid var(--parchment);
+  border-radius: 40px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 8px 16px;
+}
+
+/* Verse band */
+.verse-band {
+  background: var(--cream-dark);
+  border-bottom: 1px solid var(--parchment);
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.verse-deco {
+  display: block;
+  font-size: 22px;
+  color: var(--sage-light);
+  margin-bottom: 16px;
+  letter-spacing: 8px;
+}
+
+.verse-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.45;
+  margin-bottom: 14px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.verse-ref {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════
+   TASK 5: CATEGORIES
+══════════════════════════════════════ */
+
+/* Section common */
+.section {
+  padding: 48px 20px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.section-link {
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--parchment);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.section-link:hover {
+  color: var(--terra);
+  border-bottom-color: var(--terra);
+}
+
+/* Categories grid */
+.cat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.cat-card {
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cat-card:nth-child(2n) {
+  margin-top: 24px;
+}
+
+.cat-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px rgba(44, 32, 24, 0.18);
+}
+
+.cat-bg {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.cat-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -65%);
+  font-size: 44px;
+  opacity: 0.4;
+}
+
+.cat-info {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(transparent, rgba(44, 32, 24, 0.4));
+}
+
+.cat-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
+.cat-count {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ══════════════════════════════════════
+   TASK 6: PRODUCTS
+══════════════════════════════════════ */
+
+.products-scroll {
+  margin: 0 -20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 4px 20px 20px;
+}
+
+.products-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.products-row {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+}
+
+.prod-card {
+  width: 230px;
+  background: var(--cream-dark);
+  border: 1px solid var(--parchment);
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prod-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(44, 32, 24, 0.14);
+}
+
+.prod-img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+}
+
+.prod-info {
+  padding: 16px 18px 18px;
+}
+
+.prod-tag {
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage-dark);
+  background: rgba(138, 158, 122, 0.15);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.prod-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.prod-desc {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.prod-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prod-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  color: var(--terra);
+}
+
+.btn-add {
+  background: var(--ink);
+  color: var(--cream);
+  border: none;
+  border-radius: 24px;
+  padding: 9px 18px;
+  font-size: 12px;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: var(--terra);
+}
+
+/* ══════════════════════════════════════
+   TASK 7: ABOUT + NEWSLETTER + FOOTER
+══════════════════════════════════════ */
+
+/* About */
+.about {
+  background: var(--deep-sage);
+  padding: 56px 24px;
+  color: var(--cream);
+}
+
+.about-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.about-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 16px;
+}
+
+.about-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  color: var(--cream);
+}
+
+.about-title em {
+  font-style: italic;
+  color: var(--dusty-rose);
+}
+
+.about-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(247, 242, 232, 0.68);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.val-card {
+  background: rgba(247, 242, 232, 0.06);
+  border: 1px solid rgba(247, 242, 232, 0.1);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.val-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.val-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--cream);
+  margin-bottom: 4px;
+}
+
+.val-text {
+  font-size: 12px;
+  color: rgba(247, 242, 232, 0.55);
+  line-height: 1.5;
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1px solid rgba(247, 242, 232, 0.3);
+  color: var(--cream);
+  padding: 13px 28px;
+  border-radius: 40px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.btn-outline:hover {
+  background: rgba(247, 242, 232, 0.08);
+  border-color: rgba(247, 242, 232, 0.5);
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 52px 24px;
+  background: var(--cream-dark);
+  border-top: 1px solid var(--parchment);
+  text-align: center;
+}
+
+.nl-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.nl-deco {
+  font-size: 16px;
+  color: var(--sage-light);
+  letter-spacing: 12px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.nl-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+
+.nl-title em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.nl-text {
+  font-size: 14px;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.nl-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nl-input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 1px solid var(--parchment);
+  border-radius: 40px;
+  font-size: 14px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+}
+
+.nl-input::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
+.nl-input:focus {
+  outline: none;
+  border-color: var(--terra);
+}
+
+/* Footer */
+footer {
+  background: var(--deep-sage);
+  color: var(--cream);
+  padding: 48px 24px 32px;
+}
+
+.footer-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.footer-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.footer-brand em {
+  font-style: italic;
+  color: var(--terra);
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: rgba(247, 242, 232, 0.55);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.soc-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(247, 242, 232, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: rgba(247, 242, 232, 0.7);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.soc-btn:hover {
+  border-color: var(--terra);
+  color: var(--terra);
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.footer-col-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 9px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 13px;
+  color: rgba(247, 242, 232, 0.5);
+  font-weight: 300;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--terra);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(247, 242, 232, 0.1);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(247, 242, 232, 0.35);
+}
+
+.footer-verse {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: rgba(247, 242, 232, 0.4);
+}
+
+/* ══════════════════════════════════════
    DESKTOP OVERRIDES @media (min-width: 768px)
 ══════════════════════════════════════ */
 @media (min-width: 768px) {
@@ -541,6 +1103,113 @@ nav.scrolled {
 
   .scroll-hint {
     display: none;
+  }
+
+  /* Task 4 desktop */
+  .trust-pills {
+    justify-content: center;
+    overflow: visible;
+    flex-wrap: wrap;
+  }
+
+  .verse-text {
+    font-size: 32px;
+  }
+
+  /* Task 5 desktop */
+  .section {
+    padding: 60px 48px;
+  }
+
+  .section-title {
+    font-size: 48px;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .cat-card:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .cat-card:nth-child(2) {
+    margin-top: 32px;
+  }
+
+  .cat-card:nth-child(5) {
+    margin-top: -32px;
+  }
+
+  /* Task 6 desktop */
+  .products-scroll {
+    margin: 0;
+    overflow: visible;
+    padding: 4px 0 0;
+  }
+
+  .products-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    width: auto;
+  }
+
+  .prod-card {
+    width: auto;
+  }
+
+  /* Task 7 desktop */
+  .about {
+    padding: 80px 48px;
+  }
+
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-title {
+    font-size: 42px;
+  }
+
+  .values-grid {
+    margin-bottom: 0;
+  }
+
+  .newsletter {
+    padding: 70px 48px;
+  }
+
+  .nl-form {
+    flex-direction: row;
+  }
+
+  .nl-input {
+    text-align: left;
+  }
+
+  footer {
+    padding: 60px 48px 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 40px;
+  }
+
+  .footer-cols {
+    display: contents;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 </style>
@@ -667,6 +1336,293 @@ nav.scrolled {
 <!-- Scroll hint (outside hero on mobile) -->
 <div class="scroll-hint">Листать вниз</div>
 
+<!-- ══ TASK 4: TRUST PILLS ══ -->
+<div class="trust-pills">
+  <div class="trust-pill">🌿 Сделано с молитвой</div>
+  <div class="trust-pill">📦 Доставка по России</div>
+  <div class="trust-pill">✦ Малый живой тираж</div>
+  <div class="trust-pill">💛 Для семьи и детей</div>
+</div>
+
+<!-- ══ TASK 4: VERSE BAND ══ -->
+<div class="verse-band reveal">
+  <span class="verse-deco">✦ ✦ ✦</span>
+  <p class="verse-text">«Всё, что только истинно, что честно, что справедливо, что чисто, что любезно... о сём помышляйте»</p>
+  <p class="verse-ref">Филиппийцам 4:8</p>
+</div>
+
+<!-- ══ TASK 5: CATEGORIES ══ -->
+<section id="categories">
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Катало<em>г</em></h2>
+      <a href="#" class="section-link">Все категории</a>
+    </div>
+    <div class="cat-grid">
+
+      <!-- Category 1 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #E0D8CC, #C4B498);">
+          <span class="cat-icon">🖼</span>
+          <div class="cat-info">
+            <div class="cat-name">Постеры</div>
+            <div class="cat-count">Библейские стихи</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #CDD9C4, #A8C098);">
+          <span class="cat-icon">📔</span>
+          <div class="cat-info">
+            <div class="cat-name">Prayer Journals</div>
+            <div class="cat-count">Планеры для мам</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #E4D0C8, #C8A090);">
+          <span class="cat-icon">🎨</span>
+          <div class="cat-info">
+            <div class="cat-name">Раскраски</div>
+            <div class="cat-count">Для детей по Библии</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #E8D8CC, #D4B8A0);">
+          <span class="cat-icon">✨</span>
+          <div class="cat-info">
+            <div class="cat-name">Наклейки</div>
+            <div class="cat-count">Закладки, открытки</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 5 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #E0DCC8, #C4B888);">
+          <span class="cat-icon">🎄</span>
+          <div class="cat-info">
+            <div class="cat-name">Праздники</div>
+            <div class="cat-count">Пасха, Рождество</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 6 -->
+      <div class="cat-card reveal">
+        <div class="cat-bg" style="background: linear-gradient(160deg, #D4DCCC, #B0C0A0);">
+          <span class="cat-icon">📚</span>
+          <div class="cat-info">
+            <div class="cat-name">Activity Books</div>
+            <div class="cat-count">Задания для детей</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TASK 6: PRODUCTS ══ -->
+<section id="products" style="padding-top: 0;">
+  <div class="section" style="padding-top: 0;">
+    <div class="section-header">
+      <h2 class="section-title">Новин<em>ки</em></h2>
+      <a href="#" class="section-link">Все товары</a>
+    </div>
+    <div class="products-scroll">
+      <div class="products-row">
+
+        <!-- Product 1 -->
+        <div class="prod-card reveal" data-id="poster-ne-boysya">
+          <div class="prod-img" style="background: linear-gradient(135deg, #E4DCC8, #C8B898);">🖼</div>
+          <div class="prod-info">
+            <span class="prod-tag">Постер</span>
+            <div class="prod-name">«Не бойся» А3</div>
+            <p class="prod-desc">Плакат с Иисус Навин 1:9. Акварельная ботаника, тёплые тона.</p>
+            <div class="prod-footer">
+              <span class="prod-price">490 ₽</span>
+              <button class="btn-add" data-id="poster-ne-boysya" data-name="«Не бойся» А3" data-price="490" data-tag="Постер">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="prod-card reveal" data-id="journal-utro">
+          <div class="prod-img" style="background: linear-gradient(135deg, #D0DCCC, #B0C4A8);">📔</div>
+          <div class="prod-info">
+            <span class="prod-tag">Журнал</span>
+            <div class="prod-name">Prayer Journal «Утро»</div>
+            <p class="prod-desc">Блокнот для молитв и размышлений. Акварельная обложка, 120 листов.</p>
+            <div class="prod-footer">
+              <span class="prod-price">620 ₽</span>
+              <button class="btn-add" data-id="journal-utro" data-name="Prayer Journal «Утро»" data-price="620" data-tag="Журнал">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="prod-card reveal" data-id="raskraska-pastyr">
+          <div class="prod-img" style="background: linear-gradient(135deg, #E0CCC8, #C8A8A0);">🎨</div>
+          <div class="prod-info">
+            <span class="prod-tag">Детям</span>
+            <div class="prod-name">«Добрый пастырь»</div>
+            <p class="prod-desc">Раскраска для детей 4–8 лет с историями из Библии и заданиями.</p>
+            <div class="prod-footer">
+              <span class="prod-price">380 ₽</span>
+              <button class="btn-add" data-id="raskraska-pastyr" data-name="«Добрый пастырь»" data-price="380" data-tag="Детям">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="prod-card reveal" data-id="kartochki-obetovaniya">
+          <div class="prod-img" style="background: linear-gradient(135deg, #E8E0D0, #D4C8B0);">🃏</div>
+          <div class="prod-info">
+            <span class="prod-tag">Карточки</span>
+            <div class="prod-name">«Обетования» 30 шт</div>
+            <p class="prod-desc">Набор карточек с обетованиями из Писания. Плотная бумага, красивый дизайн.</p>
+            <div class="prod-footer">
+              <span class="prod-price">350 ₽</span>
+              <button class="btn-add" data-id="kartochki-obetovaniya" data-name="«Обетования» 30 шт" data-price="350" data-tag="Карточки">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="prod-card reveal" data-id="nakleyki-vera">
+          <div class="prod-img" style="background: linear-gradient(135deg, #E8D4C8, #D4A898);">✨</div>
+          <div class="prod-info">
+            <span class="prod-tag">Наклейки</span>
+            <div class="prod-name">Наклейки «Вера»</div>
+            <p class="prod-desc">Набор виниловых наклеек с библейскими мотивами. Подходят для ежедневников.</p>
+            <div class="prod-footer">
+              <span class="prod-price">180 ₽</span>
+              <button class="btn-add" data-id="nakleyki-vera" data-name="Наклейки «Вера»" data-price="180" data-tag="Наклейки">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="prod-card reveal" data-id="paskhalny-nabor">
+          <div class="prod-img" style="background: linear-gradient(135deg, #E0DCC8, #C8B898);">🐣</div>
+          <div class="prod-info">
+            <span class="prod-tag">Праздники</span>
+            <div class="prod-name">Пасхальный набор</div>
+            <p class="prod-desc">Раскраска + наклейки + открытка для детей. Подарочная упаковка.</p>
+            <div class="prod-footer">
+              <span class="prod-price">550 ₽</span>
+              <button class="btn-add" data-id="paskhalny-nabor" data-name="Пасхальный набор" data-price="550" data-tag="Праздники">В корзину</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TASK 7: ABOUT ══ -->
+<section id="about" class="about reveal">
+  <div class="about-inner">
+    <!-- Left column -->
+    <div>
+      <p class="about-eyebrow">Наша история</p>
+      <h2 class="about-title">Сделано <em>с верой</em> в Краснодарском крае</h2>
+      <p class="about-text">Мы — семья из Белореченска, которая верит, что красота и Слово Божье могут идти рядом. Каждый наш продукт создаётся с молитвой, вниманием к деталям и любовью к семье. Малый живой тираж — потому что важно качество, а не количество.</p>
+      <a href="#" class="btn-outline">Читать нашу историю</a>
+    </div>
+    <!-- Right column: values -->
+    <div>
+      <div class="values-grid">
+        <div class="val-card">
+          <div class="val-icon">✦</div>
+          <div class="val-title">Вера</div>
+          <p class="val-text">Всё создаётся в молитве и с упованием на Господа.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">🌿</div>
+          <div class="val-title">Красота</div>
+          <p class="val-text">Эстетика, которая вдохновляет и радует каждый день.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">👨‍👩‍👧</div>
+          <div class="val-title">Семья</div>
+          <p class="val-text">Продукты для мам, пап и детей — для всей семьи.</p>
+        </div>
+        <div class="val-card">
+          <div class="val-icon">🤍</div>
+          <div class="val-title">Качество</div>
+          <p class="val-text">Малый тираж и ручная проверка каждого экземпляра.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TASK 7: NEWSLETTER ══ -->
+<section class="newsletter reveal">
+  <div class="nl-inner">
+    <span class="nl-deco">✦ ✦ ✦</span>
+    <h2 class="nl-title">Новинки <em>первыми</em></h2>
+    <p class="nl-text">Подпишитесь на рассылку и узнавайте о новых продуктах, сезонных коллекциях и специальных предложениях раньше всех.</p>
+    <form class="nl-form" onsubmit="handleNewsletterSubmit(event)">
+      <input type="email" class="nl-input" placeholder="ваш@email.ru" required>
+      <button type="submit" class="btn-primary" style="width: 100%; white-space: nowrap;">Подписаться</button>
+    </form>
+  </div>
+</section>
+
+<!-- ══ TASK 7: FOOTER ══ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <!-- Brand -->
+      <div>
+        <div class="footer-brand">Svet<em>ly</em></div>
+        <p class="footer-tagline">Христианская печатная продукция.<br>Сделано с молитвой в Краснодарском крае.</p>
+        <div class="footer-social">
+          <a href="#" class="soc-btn" aria-label="VK">VK</a>
+          <a href="#" class="soc-btn" aria-label="Telegram">TG</a>
+          <a href="#" class="soc-btn" aria-label="Instagram">IG</a>
+        </div>
+      </div>
+      <!-- Footer columns -->
+      <div class="footer-cols">
+        <div>
+          <div class="footer-col-title">Каталог</div>
+          <ul class="footer-links">
+            <li><a href="#">Постеры</a></li>
+            <li><a href="#">Раскраски</a></li>
+            <li><a href="#">Журналы</a></li>
+            <li><a href="#">Наклейки</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Магазин</div>
+          <ul class="footer-links">
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Svetly. Все права защищены.</p>
+      <p class="footer-verse">«Слово Твоё — светильник ноге моей» · Пс. 118:105</p>
+    </div>
+  </div>
+</footer>
+
 <script>
 // ── Nav scroll ──
 const navbar = document.getElementById('navbar');
@@ -705,6 +1661,46 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── Newsletter submit ──
+function handleNewsletterSubmit(e) {
+  e.preventDefault();
+  const input = e.target.querySelector('.nl-input');
+  const btn = e.target.querySelector('.btn-primary');
+  btn.textContent = 'Подписались! ✦';
+  btn.style.background = 'var(--sage-dark)';
+  input.value = '';
+  setTimeout(() => {
+    btn.textContent = 'Подписаться';
+    btn.style.background = '';
+  }, 3000);
+}
+
+// ── Add to cart ──
+let cart = [];
+
+document.querySelectorAll('.btn-add').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.id;
+    const name = btn.dataset.name;
+    const price = parseInt(btn.dataset.price);
+    const tag = btn.dataset.tag;
+    const existing = cart.find(item => item.id === id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id, name, price, tag, qty: 1 });
+    }
+    const count = cart.reduce((sum, item) => sum + item.qty, 0);
+    document.getElementById('navCartCount').textContent = count;
+    btn.textContent = 'Добавлено ✓';
+    btn.style.background = 'var(--sage-dark)';
+    setTimeout(() => {
+      btn.textContent = 'В корзину';
+      btn.style.background = '';
+    }, 1500);
+  });
+});
 </script>
 </body>
 </html>
